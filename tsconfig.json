@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "allowJs": false, // 不允许引用js文件
+    "strict": true, // 启用所有严格类型检查选项
+    "strictFunctionTypes": false, // 禁用函数参数双向协变检查 https://www.tslang.cn/docs/handbook/type-compatibility.html
+    "forceConsistentCasingInFileNames": true, // 禁止对同一个文件的不一致的引用 Ensure that casing is correct in imports
+    "allowSyntheticDefaultImports": true, // Allow 'import x from y' when a module doesn't have a default export
+    "jsx": "preserve", // Specify what JSX code is generated
+    "sourceMap": true, // 生成相应的 .map 文件
+    "noUnusedLocals": true, // 若有未使用的局部变量则抛错
+    "noUnusedParameters": true, // 若有未使用的参数则抛错
+    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "noImplicitAny": false, // 在表达式和声明上有隐含的 any 类型时,不报错
+    "skipLibCheck": true, // 忽略所有的声明文件（ *.d.ts）的类型检查
+    "target": "esnext", // 指定ECMAScript目标版本 ES3
+    "module": "esnext", // 指定生成哪个模块系统代码 ES6 commonjs amd umd system nodenext
+    "moduleResolution": "node", // 兼容 cjs module.exports
+    "types": ["vite/client","element-plus/global"],
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "./types",
+    "viteconfig",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue"
+  ]
+}
