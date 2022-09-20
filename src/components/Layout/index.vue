@@ -1,10 +1,14 @@
 <template>
   <div class="mo-layout">
     <ElContainer>
-      <ElHeader class="mo-header-container">ElHeader</ElHeader>
+      <ElHeader class="mo-header-container">
+        <HeaderNav />
+      </ElHeader>
       <ElContainer :style="containerHeight">
         <ElAside class="mo-aside-container">ElAside</ElAside>
-        <ElMain class="mo-main-container">ElMain</ElMain>
+        <ElMain class="mo-main-container">
+          <router-view></router-view>
+        </ElMain>
       </ElContainer>
     </ElContainer>
   </div>
@@ -12,7 +16,9 @@
 
 <script lang="ts" setup>
   import { computed } from 'vue'
-  const headerHeight = 55
+  import HeaderNav from '@src/components/HeaderNav/index.vue'
+
+  const headerHeight = 50
   const containerHeight = computed(() => {
     return `height: ${window.innerHeight - headerHeight}px`
   })
@@ -20,6 +26,9 @@
 
 <style lang="less">
   .mo-layout {
+    min-height: 700px;
+    min-width: 1000px;
+
     .mo-header-container {
       height: @header-height;
     }
