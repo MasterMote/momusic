@@ -5,7 +5,9 @@
         <HeaderNav />
       </ElHeader>
       <ElContainer :style="containerHeight">
-        <ElAside class="mo-aside-container">ElAside</ElAside>
+        <ElAside class="mo-aside-container">
+          <AsideNav />
+        </ElAside>
         <ElMain class="mo-main-container">
           <router-view></router-view>
         </ElMain>
@@ -17,6 +19,7 @@
 <script lang="ts" setup>
   import { computed } from 'vue'
   import HeaderNav from '@src/components/HeaderNav/index.vue'
+  import AsideNav from '@src/components/AsideNav/index.vue'
 
   const headerHeight = 50
   const containerHeight = computed(() => {

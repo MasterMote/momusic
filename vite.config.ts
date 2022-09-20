@@ -1,5 +1,6 @@
 import { resolve } from 'path'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import genPostcssPlugins from './viteconfig/postcss.vite'
 import alias from './viteconfig/alias.vite'
 
@@ -7,7 +8,8 @@ export default async ({ command, isProxy = true }) => {
   const isBuild: boolean = command === 'build'
   return {
     plugins: [
-      vue(),
+      Vue(),
+      VueJsx()
     ],
     server: {
       host: '127.0.0.1',
